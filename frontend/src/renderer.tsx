@@ -5,7 +5,7 @@ const App = () => {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/hello")
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/api/hello`)
       .then((response) => response.json())
       .then((data) => setMessage(data.message))
       .catch((error) => console.error("Error:", error));
